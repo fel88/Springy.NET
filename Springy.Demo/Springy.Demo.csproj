@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>springy</RootNamespace>
     <AssemblyName>springy</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -66,6 +67,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,9 +83,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Springy.Lib\Springy.Lib.csproj">
-      <Project>{c2a2a8fe-34f5-40a1-8a6b-c2bec8f58c07}</Project>
-      <Name>springlib</Name>
+    <ProjectReference Include="..\Springy.NET\Springy.NET.csproj">
+      <Project>{c1de7c66-b221-4eb9-886a-3149099d9097}</Project>
+      <Name>Springy.NET</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

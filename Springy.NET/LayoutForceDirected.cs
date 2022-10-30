@@ -109,7 +109,11 @@ namespace Springy.Lib
             return this.edgeSprings[edge.id];
         }
 
-        double stiffness = 400;
+        public double repulsion = 400;
+        public double damping = 0.5;
+        public double maxSpeed = double.PositiveInfinity; //maxSpeed || Infinity; // nodes aren't allowed to exceed this speed
+        public double stiffness = 400;
+        public double minEnergyThreshold = 0.00001;
 
         // Calculate the total kinetic energy of the system
         double totalEnergy()
@@ -126,7 +130,6 @@ namespace Springy.Lib
 
         bool _started;
         bool _stop;
-        double minEnergyThreshold = 0.00001;
         public void Update()
         {
 
@@ -188,9 +191,7 @@ namespace Springy.Lib
         }
 
         public Dictionary<int, ForceDirectedPoint> nodePoints = new Dictionary<int, ForceDirectedPoint>();
-        double repulsion = 400;
-        double damping = 0.5;
-        double maxSpeed = double.PositiveInfinity; //maxSpeed || Infinity; // nodes aren't allowed to exceed this speed
+    
         ForceDirectedPoint point(Node node)
         {
             if (!(this.nodePoints.ContainsKey(node.id)))
